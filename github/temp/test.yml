@@ -15,13 +15,14 @@ jobs:
     strategy:
       matrix:
         node: [18,20,22]
+        os: []
     runs-on : ubuntu-latest
     steps:
       --name:Checkout
         users: actions/checkout@v4
       --users: actions/setup-node@v4
-          with:
-            node-version: ${{ matrix.node }}
+        with:
+          node-version: ${{ matrix.node }}
       --name: Install
         run: npm ci
       --name: Test 
